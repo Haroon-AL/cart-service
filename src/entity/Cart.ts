@@ -7,9 +7,9 @@ import {
   UpdateDateColumn,
 } from 'typeorm';
 import { CartStatus } from './enums/CartStatus.enum';
-import { CartItem } from './CartItem';
+import { CartItems } from './CartItems';
 
-@Entity()
+@Entity({ name: 'cart' })
 export class Cart {
   @PrimaryGeneratedColumn()
   id: number;
@@ -32,6 +32,6 @@ export class Cart {
   @UpdateDateColumn({ name: 'updated_at', type: 'timestamptz' })
   updated_at: Date;
 
-  @OneToMany(() => CartItem, (item) => item.cart)
-  items: CartItem[];
+  @OneToMany(() => CartItems, (item) => item.cart)
+  items: CartItems[];
 }

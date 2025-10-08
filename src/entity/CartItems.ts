@@ -6,20 +6,19 @@ import {
   ManyToOne,
   JoinColumn,
   UpdateDateColumn,
-  OneToOne,
 } from 'typeorm';
 import { Cart } from './Cart';
 import { Products } from './Products';
 
-@Entity()
-export class CartItem {
+@Entity({ name: 'cart_items' })
+export class CartItems {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ type: 'decimal', nullable: false })
+  @Column({ name: 'price', type: 'decimal', nullable: false })
   price: number;
 
-  @Column({ type: 'int', default: 1 })
+  @Column({ name: 'quantity', type: 'int', default: 1 })
   quantity: number;
 
   @CreateDateColumn({ name: 'created_at', type: 'timestamptz' })

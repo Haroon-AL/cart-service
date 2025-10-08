@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import { DataSource } from 'typeorm';
 import { ConfigService } from '@nestjs/config';
 import { Cart } from '../entity/Cart';
-import { CartItem } from '../entity/CartItem';
+import { CartItems } from '../entity/CartItems';
 import { Products } from '../entity/Products';
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions';
 
@@ -17,7 +17,7 @@ export const DatabaseConfig: PostgresConnectionOptions = {
   database: configService.get<string>('DB_NAME', 'products'),
   synchronize: false,
   logging: false,
-  entities: [Cart, CartItem, Products],
+  entities: [Cart, CartItems, Products],
   migrations: ['src/migrations/**/*.ts'],
 };
 
