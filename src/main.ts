@@ -3,6 +3,7 @@ import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import 'reflect-metadata';
 import { AppDataSource } from './datasource/data-source';
+import { ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
   try {
@@ -14,6 +15,7 @@ async function bootstrap() {
     process.exit(1);
   }
   const app = await NestFactory.create(AppModule);
+  app.useGlobalPipes(new ValidationPipe());
   const config = new DocumentBuilder()
     .setTitle('Cart Service')
     .setDescription('description')
