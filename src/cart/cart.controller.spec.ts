@@ -1,5 +1,6 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { CartController } from './cart.controller';
+import { Cart } from '../entity/Cart';
 
 describe('CartController', () => {
   let controller: CartController;
@@ -16,5 +17,9 @@ describe('CartController', () => {
     expect(controller).toBeDefined();
   });
 
-  
+  it('should return empty cart when cart is empty'), () => {
+    const cart = Cart;
+
+    
+  };
 });

@@ -6,7 +6,7 @@ import { Cart } from '../entity/Cart';
 import { CartItems } from '../entity/CartItems';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([Cart, CartItems])], //torm moduel for feature
+  imports: [TypeOrmModule.forFeature([Cart, CartItems])],
   providers: [CartService],
   controllers: [CartController],
 })

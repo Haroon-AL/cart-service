@@ -9,7 +9,7 @@ import { CartItems } from '../entity/CartItems';
 export class CartService {
   constructor(
     @InjectRepository(Cart)
-    private readonly cartRepo: Repository<CartDto>,
+    private readonly cartRepo: Repository<Cart>,
 
     @InjectRepository(CartItems)
     private readonly cartItemsRepo: Repository<CartItems>

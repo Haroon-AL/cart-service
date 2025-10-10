@@ -1,5 +1,7 @@
 {
    "compilerOptions": {
+      "importsNotUsedAsValues": "remove",
+
       "lib": [
          "es2021"
       ],
